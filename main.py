@@ -5,7 +5,7 @@ class Product:
 
 
 class ProductsImpl:
-    def __init__(self):
+    def __init__(self) -> None:
         self.products = []
 
     def __check(self, product: Product) -> bool:
