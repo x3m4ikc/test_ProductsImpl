@@ -25,14 +25,15 @@ class ProductsImpl:
             return True
         return False
 
-    def find_product_name(self, product) -> str:
-        if self.__check(product):
-            return product.name
+    def find_product_name(self, id: int) -> str:
+        for item in self.products:
+            if item.id == id:
+                return item.name
         return ""
 
     def find_by_name(self, name: str) -> list:
-        list_id = []
+        matches = []
         for item in self.products:
             if item.name == name:
-                list_id.append(item.id)
-        return list_id
+                matches.append(item.id)
+        return matches
